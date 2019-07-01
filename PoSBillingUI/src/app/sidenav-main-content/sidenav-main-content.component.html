@@ -1,0 +1,20 @@
+<div class="row h-100" style="margin: 0px;">
+  <div class="col-md-9">
+    <div class="row" id="scroll-style" style="height: 800px;overflow: auto">
+
+
+      <div class="col-md-3" style="padding: 15px;cursor:pointer" *ngFor="let inv of inventoryList">
+        <mat-card matRipple (click)='addToCart(inv)'>
+          <mat-card-header>
+            <div mat-card-avatar class="card-header-image"></div>
+            <mat-card-title>{{inv.name|uppercase}}</mat-card-title>
+            <mat-card-subtitle>Price: {{inv.price|currency:'INR'}} <br> {{inv.category}}</mat-card-subtitle>
+          </mat-card-header>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-3 mat-elevation-z4 zero-padding">
+    <pos-app-sidebar></pos-app-sidebar>
+  </div>
+</div>

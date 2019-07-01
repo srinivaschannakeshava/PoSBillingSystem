@@ -1,0 +1,17 @@
+<mat-toolbar color='accent'>
+  <span style="margin: auto;">Menu</span>
+</mat-toolbar>
+<mat-nav-list class="zero-padding text-center">
+  <mat-list-item (click)='onNavSelection()' routerLink='/all-items' routerLinkActive="active">All Items</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item routerLink='/food-items' routerLinkActive="active">Food Items</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item routerLink='/beverage-items' routerLinkActive="active">Beverages</mat-list-item>
+  <mat-divider></mat-divider>
+  <mat-list-item routerLink='/snack-items' routerLinkActive="active">Snacks Items</mat-list-item>
+  <mat-divider>
+  </mat-divider>
+  <mat-list-item (click)="openAddItem()">Add Items</mat-list-item>
+  <mat-divider>
+  </mat-divider>
+</mat-nav-list>

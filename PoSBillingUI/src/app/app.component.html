@@ -1,0 +1,12 @@
+<div class="h-100">
+  <pos-app-navbar (sidenavBtnEvent)='sidenavFlag=!sidenavFlag'></pos-app-navbar>
+  <mat-sidenav-container style="height:93%">
+    <mat-sidenav mode='side' #sidenav class="col-md-2 zero-padding" [opened]='sidenavFlag'>
+      <pos-sidenav-content></pos-sidenav-content>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <pos-sidenav-main-content></pos-sidenav-main-content>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+  <pos-app-foot></pos-app-foot>
+</div>

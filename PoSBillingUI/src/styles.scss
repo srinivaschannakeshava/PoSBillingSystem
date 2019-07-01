@@ -1,0 +1,142 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face {
+  font-family: 'Material Icons';
+  font-style: normal;
+  font-weight: 400;
+  src: url(assets/fonts/google-font.woff2) format('woff2');
+}
+
+.material-icons {
+  font-family: 'Material Icons';
+  font-weight: normal;
+  font-style: normal;
+  font-size: 24px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
+@import '~@angular/material/theming';
+@include mat-core();
+
+
+$md-lightposprime: (50 : #fcf2e7,
+  100 : #f8dec3,
+  200 : #f3c89c,
+  300 : #eeb274,
+  400 : #eaa256,
+  500 : #e69138,
+  600 : #e38932,
+  700 : #df7e2b,
+  800 : #db7424,
+  900 : #d56217,
+  A100 : #ffffff,
+  A200 : #ffe3d4,
+  A400 : #ffc3a1,
+  A700 : #ffb287,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #ffffff,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
+
+$md-lightposaccent: (50 : #f3f8fc,
+  100 : #e2eef8,
+  200 : #cfe2f4,
+  300 : #bcd6ef,
+  400 : #adceeb,
+  500 : #9fc5e8,
+  600 : #97bfe5,
+  700 : #8db8e2,
+  800 : #83b0de,
+  900 : #72a3d8,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #eef6ff,
+  A700 : #d4e9ff,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
+$md-lightposwarn: (50 : #fcf3f3,
+  100 : #f9e0e0,
+  200 : #f5cccc,
+  300 : #f0b8b8,
+  400 : #eda8a8,
+  500 : #ea9999,
+  600 : #e79191,
+  700 : #e48686,
+  800 : #e17c7c,
+  900 : #b60000,
+  A100 : #ffffff,
+  A200 : #ffffff,
+  A400 : #ffeaea,
+  A700 : #ffd0d0,
+  contrast: (50 : #000000,
+    100 : #000000,
+    200 : #000000,
+    300 : #000000,
+    400 : #000000,
+    500 : #000000,
+    600 : #000000,
+    700 : #000000,
+    800 : #000000,
+    900 : #000000,
+    A100 : #000000,
+    A200 : #000000,
+    A400 : #000000,
+    A700 : #000000,
+  ));
+
+
+$app-primary: mat-palette($md-lightposprime);
+$app-accent: mat-palette($md-lightposaccent);
+$app-warn: mat-palette($md-lightposwarn, 900);
+$app-light-theme: mat-light-theme($app-primary, $app-accent, $app-warn);
+$app-dark-theme:mat-dark-theme($app-primary, $app-accent, $app-warn);
+@include angular-material-theme($app-light-theme);
+
+html,
+body {
+  height: 100%;
+}
+
+.zero-margin {
+  margin: 0px !important;
+}
+
+.zero-padding {
+  padding: 0px !important;
+}
+
+.title-center {
+  margin: 0 auto;
+}

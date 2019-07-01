@@ -1,0 +1,27 @@
+<mat-toolbar color='primary' style="height: 5%">
+  <button mat-button (click)="emitSidenavBtnEvent()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span>PoS Billing system</span>
+
+  <mat-form-field appearance="outline" [style.fontSize.px]="12" style="margin-top: 15px; margin-left: 100px;">
+    <mat-label>Search Item</mat-label>
+    <input matInput placeholder="Item Name" [formControl]="searchControl">
+    <mat-icon matSuffix>search</mat-icon>
+  </mat-form-field>
+  <span style="flex: 1 1 auto;"></span>
+  <!-- <button mat-button [matMenuTriggerFor]="menu">
+    Printer<mat-icon>expand_more</mat-icon>
+  </button>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngFor="let printer of printerList"> {{printer}}</button>
+  </mat-menu> -->
+  <mat-form-field appearance="outline" [style.fontSize.px]="12" style="margin-top: 15px;">
+    <mat-label>Printer</mat-label>
+    <mat-select (selectionChange)="onPrinterSelection($event.value)">
+      <mat-option *ngFor="let printer of printerList" [value]="printer">
+        {{printer}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</mat-toolbar>

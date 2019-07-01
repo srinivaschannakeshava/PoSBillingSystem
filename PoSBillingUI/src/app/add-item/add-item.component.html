@@ -1,0 +1,27 @@
+<h1 mat-dialog-title>Add New Item</h1>
+<div mat-dialog-content>
+  <form [formGroup]="newItem">
+    <mat-form-field appearance="outline">
+      <mat-label>Item Name*</mat-label>
+      <input maxlength="10" matInput placeholder="Item name*" formControlName="name" required>
+      <mat-error *ngIf="newItem.controls.name.invalid">Item name required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Item Price*</mat-label>
+      <input type="number" matInput placeholder="Item Price*" formControlName="price" required>
+      <mat-error *ngIf="newItem.controls.price.invalid">Item price required</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Item Type*</mat-label>
+      <mat-select formControlName="category">
+        <mat-option *ngFor="let category of categories" [value]="category">
+          {{category}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-button (click)="addItemToInven(newItem.value)" [disabled]='!newItem.valid'>Save</button>
+  <button mat-button [mat-dialog-close]>Cancel</button>
+</div>
